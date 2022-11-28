@@ -6,10 +6,9 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 function App() {
   return (
+    <Router>
     <div className="App">
       <header className="App-header">
-
-        <Router>
           <ul>
             <li>
               <Link to='/'>Home</Link>
@@ -22,14 +21,14 @@ function App() {
             </li>
           </ul>
           <Routes>
-            <Route path='/' exact='true' element={<Home/>}></Route>
-            <Route path='/empresa' element={<Empresa/>}></Route>
-            <Route path='/contato' element={<Contato/>}></Route>
+            <Route index element={<Home/>} />
+            <Route path="/" element={<Home />} />
+            <Route path='/empresa' element={<Empresa/>} />
+            <Route path='/contato' element={<Contato/>} />
           </Routes>
-        </Router>
-
       </header>
     </div>
+  </Router>
   );
 }
 
