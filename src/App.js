@@ -2,31 +2,23 @@ import './App.css';
 import Home from './pages/Home.js';
 import Empresa from './pages/Empresa.js';
 import Contato from './pages/Contato.js';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route,  } from 'react-router-dom';
+import Navbar from './layout/Navbar';
+import Footer from './layout/Footer';
 
 function App() {
   return (
     <Router>
     <div className="App">
-      <header className="App-header">
-          <ul>
-            <li>
-              <Link to='/'>Home</Link>
-            </li>
-            <li>
-              <Link to='/empresa'>empresa</Link>
-            </li>
-            <li>
-              <Link to='/contato'>Contato</Link>
-            </li>
-          </ul>
+          <Navbar/>
           <Routes>
             <Route index element={<Home/>} />
             <Route path="/" element={<Home />} />
             <Route path='/empresa' element={<Empresa/>} />
             <Route path='/contato' element={<Contato/>} />
           </Routes>
-      </header>
+          <Footer/>
+
     </div>
   </Router>
   );
